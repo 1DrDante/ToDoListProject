@@ -6,11 +6,22 @@ def getTasks():
         for line in file:
             if line.startswith("*"):
                 goodToCopy = not goodToCopy
-
-                money = 0
             
             if goodToCopy == True:
                 element = line.strip()
                 tasks.append(element)
     return tasks
+
+def getDone():
+    done = []
+    goodToCopy = False
+    with open("storage.txt", "r") as file:
+        for line in file:
+            if line.startswith("$"):
+                goodToCopy = not goodToCopy
+            
+            if goodToCopy == True:
+                element = line.strip()
+                done.append(element)
+    return done
         
