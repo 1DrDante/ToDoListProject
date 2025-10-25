@@ -5,6 +5,8 @@ with open("storage.txt", "r") as file:
     for line in file:
         if line.startswith("*"):
             goodToCopy = not goodToCopy
+
+            money = 0
         
         if goodToCopy == True:
             element = line.strip()
