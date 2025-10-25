@@ -6,7 +6,7 @@ with open("storage.txt", "r") as file:
         if line.startswith("*"):
             goodToCopy = not goodToCopy
         
-        if goodToCopy:
+        if goodToCopy == True:
             element = line.strip()
             tasks.append(element)
         
