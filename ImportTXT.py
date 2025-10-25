@@ -5,7 +5,9 @@ def getTasks():
     with open("storage.txt", "r") as file:
         for line in file:
             if line.startswith("*"):
-                goodToCopy = not goodToCopy
+                goodToCopy = True
+            elif line.startswith("**"):
+                goodToCopy = False
             
             if goodToCopy == True:
                 element = line.strip()
@@ -18,7 +20,9 @@ def getDone():
     with open("storage.txt", "r") as file:
         for line in file:
             if line.startswith("$"):
-                goodToCopy = not goodToCopy
+                goodToCopy = True
+            elif line.startswith("$$"):
+                goodToCopy = False
             
             if goodToCopy == True:
                 element = line.strip()
