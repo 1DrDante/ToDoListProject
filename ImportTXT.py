@@ -8,6 +8,7 @@ def getTasks():
                 goodToCopy = True
             elif line.startswith("**"):
                 goodToCopy = False
+                break
             
             if goodToCopy == True:
                 element = line.strip()
