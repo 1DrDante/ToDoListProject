@@ -4,12 +4,15 @@ def getTasks():
     goodToCopy = False
     with open("storage.txt", "r") as file:
         for line in file:
-            if line.startswith("*"):
+            if line == "*":
                 goodToCopy = True
-            elif line.startswith("**"):
+            elif line == "**":
                 goodToCopy = False
                 break
             
+            if line == "" or line == "\n":
+                continue
+
             if goodToCopy == True:
                 element = line.strip()
                 tasks.append(element)
