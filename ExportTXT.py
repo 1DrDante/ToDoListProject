@@ -30,3 +30,21 @@ def addTask(newTask):
 
     print("Task added successfully!")
 
+def deleteTask(deleteTask):
+    theFile = None
+    if(deleteTask == "" or deleteTask == "*" ):
+        print("No task to delete!")
+        return
+    
+    with open("storage.txt", "r") as file:
+        theFile = file.readlines()
+
+    for line in theFile:
+        if line.__contains__(deleteTask):
+            theFile.remove(line)
+
+    with open("storage.txt", "w") as file:
+        file.appendlines(theFile)
+
+    print("Task added successfully!")
+
